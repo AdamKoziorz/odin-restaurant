@@ -1,0 +1,125 @@
+:root {
+    --main-red: rgb(172, 59, 59);
+    --nav: rgba(239, 239, 239, 0.85);
+    --footer: rgb(255, 255, 255);
+    --main-content: rgba(255, 255, 255, 0.85);
+}
+
+/* HTML/CSS Reset Code */
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    overscroll-behavior: none;
+}
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    overscroll-behavior: none;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/* Content */
+#content:not(:nth-child(1)) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.background {
+    background-image: url("./assets/strawberries.jpg");
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: repeat;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
+nav {
+    position: relative;
+    top: 30px;
+    padding: 20px;
+    background-color: var(--nav);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 60px;
+}
+
+button.nav-btn {
+    background-color: transparent;
+    border: 2px solid transparent;
+    outline: none;
+    font-size: 1.3rem;
+}
+
+button.nav-btn:hover {
+    border-bottom: 2px solid black;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.main-content {
+    background-color: var(--main-content);
+    padding: 30px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-item {
+    width: 250px;
+    height: auto;
+}
+
+.menu-item img {
+    width: 200px;
+    height: 200px;
+}
+
+.footer {
+    background-color: var(--footer);
+    padding: 30px;
+    position: sticky;
+    height: 100px;
+    top: calc( 100vh - 100px );
+}
+
+.footer p {
+    font-size: 1.3rem;
+    text-align: center;
+    margin: auto;
+}
