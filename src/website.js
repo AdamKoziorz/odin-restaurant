@@ -2,12 +2,6 @@ import loadHome from "./home";
 import loadMenu from "./menu";
 import loadAbout from "./about";
 
-function createBackground() {
-    const background = document.createElement("div");
-    background.classList.add("background");
-    return background;
-}
-
 function createHeader() {
     // Header Container
     const header = document.createElement("header");
@@ -65,7 +59,6 @@ function createFooter() {
 
 function loadContent() {
     const content = document.getElementById("content");
-    content.appendChild(createBackground());
     content.appendChild(createHeader());
     content.appendChild(createMain());
     content.appendChild(createFooter());
