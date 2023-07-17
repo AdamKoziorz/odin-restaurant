@@ -1,3 +1,5 @@
+import StoreIcon from './assets/store.png';
+
 function createHome() {
     const home = document.createElement("div");
     home.classList.add("home");
@@ -7,7 +9,17 @@ function createHome() {
     title.classList.add("title");
     title.textContent = "Smoothies";
 
+    const homeImage = document.createElement("img");
+    homeImage.src = StoreIcon;
+    homeImage.alt = "Store front"; 
+
+    const message = document.createElement("h2");
+    message.classList.add("slogan");
+    message.textContent = "Come try our delicious smoothies!";
+
     home.appendChild(title);
+    home.appendChild(homeImage);
+    home.appendChild(message);
     return home;
 }
 

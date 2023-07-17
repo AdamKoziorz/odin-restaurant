@@ -1,3 +1,5 @@
+import Placeholder from './assets/menu-items/placeholder.png';
+
 function createMenuItem(name, description) {
     const menuItem = document.createElement("div");
     menuItem.classList.add("menu-item");
@@ -6,7 +8,7 @@ function createMenuItem(name, description) {
     itemName.textContent = name;
 
     const itemImage = document.createElement("img");
-    itemImage.src = `assets/menu-items/placeholder.png`;
+    itemImage.src = Placeholder;
     itemImage.alt = `${name}`; 
 
     const itemDescription = document.createElement("p");
@@ -37,9 +39,6 @@ function createMenu() {
     menuGrid.appendChild(createMenuItem("Creamy Caramel Delight", "A decadent combination of banana, dates, almond milk, and a swirl of caramel"));
     menuGrid.appendChild(createMenuItem("Citrus Zing", "Energize with a zesty blend of orange, lemon, lime, and a splash of ginger"));
     menuGrid.appendChild(createMenuItem("Choco-Nut Bliss", "Satisfy your cravings with a creamy fusion of chocolate, peanut butter, banana, and almond milk"));
-
-
-
 
     menu.appendChild(title);
     menu.appendChild(menuGrid);

@@ -2,6 +2,18 @@ import loadHome from "./home";
 import loadMenu from "./menu";
 import loadAbout from "./about";
 
+function setActiveBtn(button) {
+    const buttons = document.querySelectorAll(".nav-btn");
+    buttons.forEach((btn) => {
+        if (btn !== this) {
+            btn.classList.remove("active");
+        }
+    });
+
+    button.classList.add("active");
+}
+
+
 function createHeader() {
     // Header Container
     const header = document.createElement("header");
@@ -9,18 +21,33 @@ function createHeader() {
 
     // Navigation
     const navigation = document.createElement("nav");
+
     const homeBtn = document.createElement("button");
     homeBtn.classList.add("nav-btn");
     homeBtn.textContent = "Home";
-    homeBtn.addEventListener("click", loadHome)
+    homeBtn.addEventListener("click", (e) => {
+        if (e.target.classList.contains("active")) return;
+        setActiveBtn(homeBtn);
+        loadHome();
+    })
+
     const menuBtn = document.createElement("button");
     menuBtn.textContent = "Menu";
     menuBtn.classList.add("nav-btn");
-    menuBtn.addEventListener("click", loadMenu)
+    menuBtn.addEventListener("click", (e) => {
+        if (e.target.classList.contains("active")) return;
+        setActiveBtn(menuBtn);
+        loadMenu();
+
+    })
     const aboutBtn = document.createElement("button");
     aboutBtn.textContent = "About";
     aboutBtn.classList.add("nav-btn");
-    aboutBtn.addEventListener("click", loadAbout)
+    aboutBtn.addEventListener("click", (e) => {
+        if (e.target.classList.contains("active")) return;
+        setActiveBtn(aboutBtn);
+        loadAbout();
+    })
 
     // Piece together
     navigation.appendChild(homeBtn);
@@ -62,6 +89,7 @@ function loadContent() {
     content.appendChild(createHeader());
     content.appendChild(createMain());
     content.appendChild(createFooter());
+    setActiveBtn(document.querySelector(".nav-btn"));
 }
 
 function init() {
