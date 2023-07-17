@@ -251,4 +251,12 @@ button.nav-btn:hover, button.nav-btn.active {
         margin: 0;
         font-size: 3rem;
     }
+
+    .main-content:not(.menu) {
+        width: 80%;
+    }
+
+    .main-content {
+        padding: 50px 30px;
+    }
  }
